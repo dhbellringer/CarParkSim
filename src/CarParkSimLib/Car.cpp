@@ -22,6 +22,7 @@ Car::giveTicket(void) const {
 void Car::binTicket(void) {
 	if (ticket_) {
 		ticket_ = std::nullopt;
+		return;
 	}
 	throw std::logic_error("Can't bin ticket, no ticket to discard");
 }
