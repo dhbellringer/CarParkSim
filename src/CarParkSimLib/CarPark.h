@@ -4,7 +4,6 @@
 #include "Car.h"
 #include "EntryPoint.h"
 #include "ExitPoint.h"
-#include "ParkingSession.h"
 #include "ParkingSessionManager.h"
 #include "ExitPolicy.h"
 #include "TicketManager.h"

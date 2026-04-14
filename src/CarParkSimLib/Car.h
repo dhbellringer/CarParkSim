@@ -1,13 +1,9 @@
 #pragma once
-#include <iostream>
 #include <optional>
 #include <string>
 
 #include "TicketMachine.h"
-
 #include "StrongID.h"
-
-#include "log.h"
 
 class Car {
 public:

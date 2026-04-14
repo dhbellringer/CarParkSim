@@ -1,6 +1,5 @@
 #include "ExitPolicy.h"
 
-
 ExitPolicy::ExitPolicyResult ExitPolicy::exitAllowed(const ParkingSession &session) const {
   auto paid = session.paid_at();
   if (!paid) {

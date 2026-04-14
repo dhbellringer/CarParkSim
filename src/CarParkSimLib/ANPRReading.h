@@ -1,7 +1,11 @@
 #pragma once
 
 #include <string>
-#include "ANPRResult.h"
+
+enum class ANPRResult {
+	Success
+	, Failure
+};
 
 struct ANPRReading {
   ANPRResult Result;

@@ -1,6 +1,5 @@
 #include "EntryPoint.h"
 #include "ANPRReading.h"
-#include "CarPark.h"
 
 EntryPoint::EntryPoint(ParkingSessionManager &sessionManager,
                        AutoSessionService &anprService,

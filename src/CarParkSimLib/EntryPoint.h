@@ -7,8 +7,6 @@
 #include "Car.h"
 #include "TicketMachine.h"
 #include "TicketManager.h"
-
-
 #include "Display.h"
 
 class EntryPoint {

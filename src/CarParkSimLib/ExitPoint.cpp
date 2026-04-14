@@ -1,7 +1,5 @@
 #include "ExitPoint.h"
 #include "ANPRReading.h"
-#include "CarPark.h"
-#include <string>
 
 ExitPoint::ExitPoint(ParkingSessionManager &sessionManager,
                      AutoSessionService &anprService,

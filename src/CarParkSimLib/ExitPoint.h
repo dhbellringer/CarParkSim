@@ -5,7 +5,6 @@
 #include "AutoSessionService.h"
 #include "Barrier.h"
 #include "Car.h"
-#include "TicketMachine.h"
 #include "ExitPolicy.h"
 #include "Display.h"
 #include "TicketManager.h"

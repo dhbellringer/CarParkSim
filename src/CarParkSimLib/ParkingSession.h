@@ -1,8 +1,7 @@
 #pragma once
 
-#include "ANPRReading.h"
 #include <chrono>
-#include <string>
+#include "ANPRReading.h"
 #include "StrongID.h"
 
 class ParkingSession {

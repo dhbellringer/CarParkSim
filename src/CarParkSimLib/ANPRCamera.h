@@ -1,10 +1,8 @@
 #pragma once
 
+#include <random>
 #include "ANPRReading.h"
 #include "Car.h"
-#include "log.h"
-#include <random>
-#include <string>
 
 class ANPRCamera {
 public:

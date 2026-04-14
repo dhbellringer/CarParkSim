@@ -1,5 +1,4 @@
 #include <stdexcept>
-
 #include "AutoSessionService.h"
 
 void AutoSessionService::associate(const std::string &registrationMark,

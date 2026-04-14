@@ -1,4 +1,5 @@
 #include "Car.h"
+#include "log.h"
 
 Car::Car(const std::string& registrationMark)
 	: registrationMark_(registrationMark), ticket_(std::nullopt) {

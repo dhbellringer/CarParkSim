@@ -1,7 +1,6 @@
 #pragma once
 
 #include <chrono>
-#include <iostream>
 #include <map>
 #include <optional>
 #include "ParkingSession.h"
