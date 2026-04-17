@@ -10,7 +10,8 @@ if (BUILD_TESTING)
     FetchContent_MakeAvailable(catch2)
 
     add_executable(carparksim_tests
-        Car_test.cpp)
+        Car_test.cpp
+        TicketManager_test.cpp)
 
     target_link_libraries(carparksim_tests
         PRIVATE
