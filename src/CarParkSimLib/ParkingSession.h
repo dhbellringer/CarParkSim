@@ -20,10 +20,8 @@ public:
       state_ = State::Paid;
       paymentTimestamp_ = paymentTime;
       return;
-    } else if (state_ == State::Paid) {
-      throw std::logic_error("Cannot mark paid: Session already paid");
-    } else if (state_ == State::Exited) {
-      throw std::logic_error("Cannot mark paid: Session already exited");
+    } else {
+      throw std::logic_error("Cannot mark paid: Session is not active");
     }
   }
 
