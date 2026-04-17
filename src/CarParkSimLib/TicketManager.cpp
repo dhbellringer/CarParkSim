@@ -4,13 +4,11 @@
 TicketID
 TicketManager::createTicketForSession(const SessionID &sessionID) {
 
-  TicketID newTicket("");
-  do {
+  TicketID newTicket(UUIDv4::generate());
+  while (ticketLookup_.contains(newTicket)) {
       newTicket = TicketID(UUIDv4::generate());
-  } while (ticketLookup_.contains(newTicket));
-
+  }
   ticketLookup_.emplace(newTicket, sessionID);
-
   return newTicket;
 }
 
