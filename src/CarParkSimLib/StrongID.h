@@ -24,6 +24,8 @@ struct StrongID {
 
 struct SessionIDTag {};
 struct TicketIDTag {};
+struct AccountIDTag {};
 
 using SessionID = StrongID<SessionIDTag>;
 using TicketID = StrongID<TicketIDTag>;
+using AccountID = StrongID<AccountIDTag>;
