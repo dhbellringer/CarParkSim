@@ -3,11 +3,11 @@
 #include <string>
 
 enum class ANPRResult {
-	Success
-	, Failure
+  Success
+  , Failure
 };
 
 struct ANPRReading {
   ANPRResult Result;
   std::string RegistrationMark;
-  };
+};
