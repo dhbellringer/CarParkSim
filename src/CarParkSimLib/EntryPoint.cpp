@@ -23,11 +23,14 @@ bool EntryPoint::carDetected(Car &car) {
                                std::chrono::system_clock::now());
 
 ;
-  if (result.Result == ANPRResult::Success) {
+  if (result.Result_ == ANPRResult::Success) {
     display_.showMessage("Registration mark read successfully");
-    anprService_.associate(result.RegistrationMark, SessionID(sessionID.sessionID()));
+    anprService_.associate(result.RegistrationMark_, SessionID(sessionID.sessionID()));
+  } else {
+    display_.showMessage("ANPR failed");
   }
 
+  display_.showMessage("Issuing ticket");
   TicketID ticketID = ticketManager_.createTicketForSession(sessionID.sessionID());
   ticketMachine_.printTicket(ticketID);
 

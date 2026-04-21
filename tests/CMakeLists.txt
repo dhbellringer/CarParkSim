@@ -11,7 +11,9 @@ if (BUILD_TESTING)
 
     add_executable(carparksim_tests
         Car_test.cpp
-        TicketManager_test.cpp)
+        TicketManager_test.cpp
+        AutoSessionService_test.cpp
+        )
 
     target_link_libraries(carparksim_tests
         PRIVATE

@@ -36,7 +36,7 @@ bool PaymentMachine::payTicket(const TicketID &ticket,
   auto paymentCalc = calculatorFactory.createPaymentCalculator();
 
   double sessionPayment = paymentCalc->calculate(session);
-  std::string message = std::format("Please pay {:.2f}", sessionPayment);
+  std::string message = std::format("Please pay £{:.2f}", sessionPayment);
   display_.showMessage(message);
 
   if (paymentService_.makePayment(paymentDetails, sessionPayment)) {

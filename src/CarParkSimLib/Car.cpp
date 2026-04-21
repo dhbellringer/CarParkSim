@@ -1,8 +1,8 @@
 #include "Car.h"
 #include "log.h"
 
-Car::Car(const std::string& registrationMark)
-	: registrationMark_(registrationMark), ticket_(std::nullopt) {
+Car::Car(const RegistrationMark& registrationMark, bool is_auto_payer)
+	: registrationMark_(registrationMark), is_auto_payer_(is_auto_payer), ticket_(std::nullopt) {
 }
 
 void Car::takeTicket(TicketMachine& ticketMachine) {
@@ -27,7 +27,7 @@ void Car::binTicket(void) {
 	throw std::logic_error("Can't bin ticket, no ticket to discard");
 }
 
-const std::string& Car::registrationMark(void) const {
-	log3("CAR", "Registration mark read", registrationMark_);
+const RegistrationMark& Car::registrationMark(void) const {
+	log3("CAR", "Registration mark read", registrationMark_.value);
 	return registrationMark_;
 }

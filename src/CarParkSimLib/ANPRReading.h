@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "StrongID.h"
 
 enum class ANPRResult {
   Success
@@ -8,6 +9,6 @@ enum class ANPRResult {
 };
 
 struct ANPRReading {
-  ANPRResult Result;
-  std::string RegistrationMark;
+  ANPRResult Result_;
+  RegistrationMark RegistrationMark_;
 };

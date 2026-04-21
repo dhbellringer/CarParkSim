@@ -6,14 +6,10 @@
 
 class AutoSessionService {
 public:
-  void associate(const std::string &registrationMark,
-                 const SessionID &sessionID);
-
-  std::optional<std::reference_wrapper<const SessionID>> 
-  lookupRegistrationMark(const std::string &registrationMark) const;
-
-  void invalidate(const std::string &registrationMark);
+  void associate(const RegistrationMark &registrationMark, const SessionID &sessionID);
+  std::optional<std::reference_wrapper<const SessionID>> lookupRegistrationMark(const RegistrationMark &registrationMark) const;
+  void invalidate(const RegistrationMark &registrationMark);
 
 private:
-  std::map<std::string, SessionID> internal_map_;
+  std::map<RegistrationMark, SessionID> internal_map_;
 };

@@ -1,27 +1,59 @@
 # src/CarParkSimLib/CMakeLists.txt
 
-# Collect all .cpp and header files in this folder (non-recursive)
-file(GLOB CARPARK_SOURCES CONFIGURE_DEPENDS
-    "CarParkSimLib/*.cpp"
-    "CarParkSimLib/*.cxx"
-)
-
-file(GLOB CARPARK_HEADERS CONFIGURE_DEPENDS
-    "CarParkSimLib/*.h"
-    "CarParkSimLib/*.hpp"
-)
-
-# Sort lists for deterministic ordering
-list(SORT CARPARK_SOURCES)
-list(SORT CARPARK_HEADERS)
-
 # Create static library from the collected source files (CPP files will be listed in generated project)
-add_library(libcarparksim STATIC ${CARPARK_SOURCES})
+add_library(libcarparksim STATIC
+  "CarParkSimLib/ANPRCamera.cpp"
+  "CarParkSimLib/AutoSessionService.cpp"
+  "CarParkSimLib/Barrier.cpp"
+  "CarParkSimLib/BasicPaymentCalculator.cpp"
+  "CarParkSimLib/Car.cpp"
+  "CarParkSimLib/CarPark.cpp"
+  "CarParkSimLib/CustomerAccountManager.cpp"
+  "CarParkSimLib/Display.cpp"
+  "CarParkSimLib/EntryPoint.cpp"
+  "CarParkSimLib/ExitPoint.cpp"
+  "CarParkSimLib/ExitPolicy.cpp"
+  "CarParkSimLib/ParkingSessionManager.cpp"
+  "CarParkSimLib/PaymentCalculatorFactory.cpp"
+  "CarParkSimLib/PaymentMachine.cpp"
+  "CarParkSimLib/PaymentService.cpp"
+  "CarParkSimLib/RegistrationIndex.cpp"
+  "CarParkSimLib/TicketMachine.cpp"
+  "CarParkSimLib/TicketManager.cpp"
+  "CarParkSimLib/AutoPayService.cpp"
+)
 
-# Add headers to the target so IDEs / solution explorers show them
-if(CARPARK_HEADERS)
-    target_sources(libcarparksim PUBLIC ${CARPARK_HEADERS})
-endif()
+#target_sources(libcarparksim PUBLIC
+#  "CarParkSimLib/AccountManager.h"
+#  "CarParkSimLib/ANPRCamera.h"
+#  "CarParkSimLib/ANPRReading.h"
+#  "CarParkSimLib/AutoSessionService.h"
+#  "CarParkSimLib/Barrier.h"
+#  "CarParkSimLib/BasicPaymentCalculator.h"
+#  "CarParkSimLib/Car.h"
+#  "CarParkSimLib/CarPark.h"
+#  "CarParkSimLib/CustomerAccount.h"
+#  "CarParkSimLib/CustomerAccountManager.h"
+#  "CarParkSimLib/Display.h"
+#  "CarParkSimLib/EntryPoint.h"
+#  "CarParkSimLib/ExitPoint.h"
+#  "CarParkSimLib/ExitPolicy.h"
+#  "CarParkSimLib/IPaymentCalculator.h"
+#  "CarParkSimLib/Log.h"
+#  "CarParkSimLib/ParkingSession.h"
+#  "CarParkSimLib/ParkingSessionManager.h"
+#  "CarParkSimLib/PaymentCalculatorFactory.h"
+#  "CarParkSimLib/PaymentDetails.h"
+#  "CarParkSimLib/PaymentMachine.h"
+#  "CarParkSimLib/PaymentService.h"
+#  "CarParkSimLib/RegistrationIndex.h"
+#  "CarParkSimLib/SessionDataSource.h"
+#  "CarParkSimLib/StrongID.h"
+#  "CarParkSimLib/TicketMachine.h"
+#  "CarParkSimLib/TicketManager.h"
+#  "CarParkSimLib/UKRegistrationMarkGenerator.h"
+#  "CarParkSimLib/UUIDv4.h"
+#)
 
 target_include_directories(libcarparksim
     PUBLIC
