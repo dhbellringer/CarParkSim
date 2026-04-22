@@ -24,7 +24,6 @@ void Car::binTicket(void) {
 		ticket_ = std::nullopt;
 		return;
 	}
-	throw std::logic_error("Can't bin ticket, no ticket to discard");
 }
 
 const RegistrationMark& Car::registrationMark(void) const {
