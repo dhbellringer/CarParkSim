@@ -1,6 +1,4 @@
 #include "ExitPoint.h"
-#include "ANPRReading.h"
-#include <iostream>
 
 ExitPoint::ExitPoint(ParkingSessionManager& sessionManager
   , AutoSessionService& anprService
@@ -53,10 +51,10 @@ bool ExitPoint::attemptExit(const Car& car) {
         display_.showMessage("No account for this registration mark");
         break;
       case AutoPayService::AutoPayResult::NoSession:
-        display_.showMessage("No session details");;
+        display_.showMessage("No session details");
         break;
       case AutoPayService::AutoPayResult::SessionNotActive:
-        display_.showMessage("Sesssion already paid!!");
+        display_.showMessage("Session already paid!!");
         break;
       }
     }
@@ -86,6 +84,10 @@ ExitPoint::resolveSession(const Car& car) {
     if (foundSession) {
       display_.showMessage("Session found");
       return ResolvedSession{ *foundSession, true, result.RegistrationMark_ };
+    }
+    else {
+      display_.showMessage("No session found for registration mark read at exit");
+      display_.showMessage("Please insert ticket");
     }
   }
   else {
